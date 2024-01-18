@@ -31,7 +31,9 @@ function createGalleryItems(images) {
   const addGallery = images
     .map(
       image =>
-        `<li class="gallery-item"><img src="${image.url}" alt="${image.alt}"></li>`
+        `<li class="gallery-item">
+        <img src="${image.url}" alt="${image.alt}">
+        </li>`
     )
     .join('');
 
