@@ -3,3 +3,42 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const controls = document.querySelector('#controls');
+  const input = controls.querySelector('input');
+  const createButton = controls.querySelector('[data-create]');
+  const destroyButton = controls.querySelector('[data-destroy]');
+  const boxesContainer = document.querySelector('#boxes');
+
+  createButton.addEventListener('click', createBoxes);
+  destroyButton.addEventListener('click', destroyBoxes);
+
+  function createBoxes() {
+    const amount = parseInt(input.value);
+
+    if (amount < 1 || amount > 100) {
+      return;
+    }
+
+    destroyBoxes();
+
+    let size = 30;
+
+    for (let i = 0; i < amount; i++) {
+      const box = document.createElement('div');
+      box.style.width = `${size}px`;
+      box.style.height = `${size}px`;
+      box.style.backgroundColor = getRandomHexColor();
+      boxesContainer.appendChild(box);
+
+      size += 10;
+    }
+
+    input.value = ''; // Очищаємо значення input
+  }
+
+  function destroyBoxes() {
+    boxesContainer.innerHTML = ''; // Очищаємо вміст контейнера
+  }
+});
