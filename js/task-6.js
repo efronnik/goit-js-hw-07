@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
       size += 10;
     }
 
-    input.value = ''; // Очищаємо значення input
+    input.value = '';
   }
 
   function destroyBoxes() {
-    boxesContainer.innerHTML = ''; // Очищаємо вміст контейнера
+    boxesContainer.innerHTML = '';
   }
 });
