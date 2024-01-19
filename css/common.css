@@ -61,18 +61,24 @@ body {
   padding: 8px 16px;
 }
 
+/* Task 2 */
 .gallery {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: 24px;
 }
 
 .gallery-item {
-  margin: 10px;
-  list-style: none;
-  padding: 0;
+  width: calc(33.333% - 16px);
+  margin-bottom: 24px;
 }
 
 .gallery-item img {
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
   border-radius: 8px;
+  vertical-align: bottom;
 }
